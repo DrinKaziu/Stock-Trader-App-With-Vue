@@ -6,6 +6,10 @@ import store from './store/store';
 
 Vue.use(VueRouter);
 
+Vue.filter('currency', (value) => {
+  return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+})
+
 const router = new VueRouter({
   mode: 'history',
   routes
